@@ -20,3 +20,5 @@ for (int right = 0; right < n; right++) {
     // Update your answer here if needed
 }
 
+- permutation in string
+
