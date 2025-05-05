@@ -21,4 +21,5 @@ for (int right = 0; right < n; right++) {
 }
 
 - permutation in string
-- 2090. K Radius Subarray Averages
+- K Radius Subarray Averages
+- Plus One
