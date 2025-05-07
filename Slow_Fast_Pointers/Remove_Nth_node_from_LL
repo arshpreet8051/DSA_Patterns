@@ -1,3 +1,6 @@
+//! Edge case: if the node to be removed is the head node, we need to start from the dummy node
+//? The dummy node is a common technique used in linked list problems to simplify edge cases, such as removing the head node.
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -9,22 +12,25 @@
  * };
  */
 class Solution {
-public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* slow = head;
-        ListNode* fast = head;
-
-        while(n--){
-            fast = fast->next;
-            if(fast==NULL)return NULL;
+    public:
+        ListNode* removeNthFromEnd(ListNode* head, int n) {
+    
+            ListNode* dummy = new ListNode(0);
+            dummy->next = head;
+    
+            ListNode* slow = dummy;
+            ListNode* fast = dummy;
+            
+            while(n--){
+                fast = fast->next;
+            }
+    
+            while(fast->next!=NULL){
+                fast = fast->next;
+                slow = slow->next;
+            }
+            slow->next = slow->next->next;
+    
+            return dummy->next;
         }
-
-        while(fast->next!=NULL){
-            fast = fast->next;
-            slow = slow->next;
-        }
-        slow->next = slow->next->next;
-
-        return head;
-    }
-};
+    };
