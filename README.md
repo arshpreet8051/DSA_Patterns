@@ -27,4 +27,12 @@ for (int right = 0; right < n; right++) {
 
 - Fast and slow pointers - observation - “When deleting or inserting near the head of a linked list — add a dummy node pointing to head. It makes the head just another node to handle.”
 - LL - Dummy node before head - to handle case if operation is to be done on head itself
+
+- Iterative one-pass sublist reversal wihtout extra space
+for (int i = 0; i < right - left; ++i) {
+            reverseStart->next = curr->next;
+            curr->next = prev->next;
+            prev->next = curr;
+            curr = reverseStart->next;
+        }
   
