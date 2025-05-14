@@ -37,4 +37,13 @@ for (int i = 0; i < right - left; ++i) {
             prev->next = curr;
             curr = reverseStart->next;
         }
+
+
+### Monotonic Stack
+
+- When you need to compare each element to the right or left, think monotonic stack.
+
+- When asked for "next/previous greater/smaller", monotonic stack is usually the best choice.
+
+- Useful in reducing nested loops → linear time solutions.
   
